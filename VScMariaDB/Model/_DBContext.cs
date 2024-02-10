@@ -9,6 +9,7 @@ namespace VScMariaDB.Model
         {
 
         public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<Produto> Produto { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder OptionsBuilder)      
                 {      
                     IConfigurationRoot Configuration = new ConfigurationBuilder()      
