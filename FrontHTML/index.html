@@ -25,14 +25,56 @@
         
             <div class="col-12">
                 <label class="form-label" for="txtDesc">Descrição</label>
-                <textarea rows="3" class="form-control" type="text" id="txtDesc">Nome Descrição</textarea>
+                <textarea rows="3" class="form-control" type="text" id="txtDesc">Descrição</textarea>
             </div>
 
             <div class="col-12">
-                <label for="form-label" form="txtImage">Url Imagem</label>
+                <label class="form-label" for="txtImage">Url Imagem</label>
                 <input type="text" class="form-control" id="txtImage">
+            </div>
+
+            <div class="col-6 mb-3">
+                <input type="checkbox" class="form-check-input" id="txtNovidade">
+                <label class="form-check-label" for="txtNovidade">Novidade</label>
+            </div>
+
+            <div class="col-6 mb-3">
+                <input type="checkbox" class="form-check-input" id="txtDisponivel">
+                <label class="form-check-label" for="txtDisponivel">Disponível</label>
+            </div>
+
+            <div class="col-12 mb-3">
+                <button class="btn btn-primary" onclick="salvarDados()">Salvar</button>
             </div>
         </div>
     </div>
+
+    <script>
+
+        function salvarDados() {
+            const dadosProdutos = {
+                Id : 0,
+                NomeProduto : document.getElementById('txtNome').value,
+                Descricao : document.getElementById('txtDesc').value,
+                Preco : document.getElementById('txtPreco').value,
+                Disponivel : document.getElementById('txtDisponivel').checked,
+                Novidade : document.getElementById('txtNovidade').checked,
+                Imagem : document.getElementById('txtImage').value
+            }
+        
+
+            fetch("https://localhost:7159/api/Produto", {
+                method: "POST",
+                body: JSON.stringify(dadosProdutos),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+                })
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch((err) => {console.log(err)})
+            }
+
+    </script>
 </body>
 </html>
