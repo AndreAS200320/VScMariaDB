@@ -7,9 +7,10 @@ namespace VScMariaDB.Model
     {
 
         public int Id { get; set; }
-
         [MaxLength(100)]
+
         public string NomeProduto { get; set; }
+        
         [MaxLength(500)]
         public string? Descricao { get; set; }
 
@@ -19,7 +20,13 @@ namespace VScMariaDB.Model
         public bool Disponivel { get; set; }
 
         public bool Novidade { get; set; }
+
+        public bool Pedido { get; set; }
+
+        public bool Promoções { get; set; }
+
         [MaxLength(200)]
         public string? Imagem { get; set;}
+
     }
 }
