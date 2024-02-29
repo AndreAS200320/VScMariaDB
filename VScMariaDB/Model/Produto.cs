@@ -17,6 +17,8 @@ namespace VScMariaDB.Model
         [Precision(10,2)]
         public decimal Preco { get; set; }
 
+        public string Grupo { get; set; }
+
         public bool Disponivel { get; set; }
 
         public bool Novidade { get; set; }
