@@ -25,7 +25,9 @@ namespace VScMariaDB.Model
 
         public bool Pedido { get; set; }
 
-        public bool Promoções { get; set; }
+        public decimal PromocoesPreco { get; set; }
+
+        public bool Promocoes { get; set; }
 
         [MaxLength(200)]
         public string? Imagem { get; set;}
