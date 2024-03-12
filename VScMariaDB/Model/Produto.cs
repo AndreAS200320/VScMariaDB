@@ -29,7 +29,7 @@ namespace VScMariaDB.Model
 
         public bool Promocoes { get; set; }
 
-        [MaxLength(200)]
+        
         public string? Imagem { get; set;}
 
     }
