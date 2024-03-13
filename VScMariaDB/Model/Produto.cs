@@ -25,7 +25,7 @@ namespace VScMariaDB.Model
 
         public bool Pedido { get; set; }
 
-        public decimal PromocoesPreco { get; set; }
+        public decimal? PromocoesPreco { get; set; }
 
         public bool Promocoes { get; set; }
 
